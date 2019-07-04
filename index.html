@@ -18,42 +18,210 @@
     <title>Configuroute</title>
   </head>
   <body>
-    <div class="nav-bar">This is the title</div>
+    <div id="nav-bar"> <div id="logo"> <img src="assets/logo.jpg" width="30" height="30"> </div> Configuroute </div>
     <div class="content">
       <div class="wrapper">
         <div class="ui two column grid">
           <div class="column" id="left-column">
-            <div class="ui two column grid">
-              <div class="column form_column">
 
-                <div class="ui mini icon input">
-                  <i class="search icon"></i>
-                  <input type="text" placeholder="Search...">
-                </div>
-  
-                
-                <select class="ui search dropdown">
-                    <option value="Lijn">Lijn</option>
-                    <option value="NMBS">NMBS</option>
-                    <option value="TEC"> Tec </option>
-                    <option value ="STIB"> STIB </option>
-                </select>
-                
-                <div class="ui checkbox">
-                    <input type="checkbox" name="Electric scouter">
-                    <label> electric scouter </label>
-                </div>
-                <div class="ui checkbox">
-                    <input type="checkbox" name="skate board">
-                    <label> skate board </label>
-                </div>
+            <div class="ui tabular menu">
+              <div class="item" data-tab="tab-name"> User interface </div>
+              <div class="item" data-tab="tab-name2"> JSON Editor </div>
+              <div class="item" data-tab="export-tab">Export</div>
+              
+            </div>
+            <div class="ui tab" data-tab="tab-name" id="UI-tab">
+              <!-- Tab Content !-->
+        
+              <div class="ui icon input" class="space-evenly">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search...">
+              </div>
+
+              <p style="margin: 10px"> Public transport </p>
+
+              <select name="providers" multiple="" class="ui fluid dropdown">
+                <option value="lijn">Lijn</option>
+                <option value="NMBS">NMBS</option>
+                <option value="Tec">Tec</option>
+                <option value="stib">STIB</option>
+              </select>
+
+              <div id="mobile-vehicle">
+               
+                  <div class="ui form">
+                      <div class="inline fields" style="margin-top:20px;">
+                        <label> Common type: </label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                              <input type="radio" name="frequency" checked="checked">
+                              <label> Car </label>
+                            </div>
+                          </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input type="radio" name="frequency">
+                            <label> Bike </label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input type="radio" name="frequency">
+                            <label> Eletric scooter </label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input type="radio" name="frequency">
+                            <label> Skateboard </label>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                              <input type="radio" name="frequency">
+                              <label> Segway </label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <table>
+
+                        <tr>
+                         <th scope="col">parameter </th>
+                         <th scope="col"> value </th>
+                        </tr>
+
+                        <tr>
+                          <td> <span style="font-weight: bold; margin-right: 15px;"> height: </span> </td>
+                          <td>  
+                            
+                            <div class="ui right labeled input">
+                                <input type="text" placeholder="Enter height..">
+                                <div class="ui basic label">
+                                  cm
+                                </div>
+                              </div> 
+                            </td>
+                           
+                        </tr>
+
+                        <tr> 
+                            <td> <span style="font-weight: bold; margin-right: 15px;"> width: </span> </td>
+                            <td>
+                            <div class="ui right labeled input">
+                                <input type="text" placeholder="Enter width..">
+                                <div class="ui basic label">
+                                  cm
+                                </div>
+                              </div>
+                            </td>
+                        </tr>
+
+                        <tr> 
+                            <td> <span style="font-weight: bold; margin-right: 15px;"> wheel diameter: </span> </td>
+                            <td>
+                            <div class="ui right labeled input">
+                                <input type="text" placeholder="Enter wheel diameter..">
+                                <div class="ui basic label">
+                                  cm
+                                </div>
+                              </div>
+                            </td>
+                        </tr>
+
+                        <tr> 
+                            <td> <span style="font-weight: bold; margin-right: 15px;"> range: </span> </td>
+                            <td>
+                            <div class="ui right labeled input">
+                                <input type="text" placeholder="Enter range..">
+                                <div class="ui basic label">
+                                  m
+                                </div>
+                              </div>
+                            </td>
+                        </tr>
+
+                        <tr> 
+                            <td> <span style="font-weight: bold; margin-right: 15px;"> maximum speed: </span> </td>
+                            <td>
+                            <div class="ui right labeled input">
+                                <input type="text" placeholder="Enter maximum speed..">
+                                <div class="ui basic label">
+                                  cm
+                                </div>
+                              </div>
+                            </td>
+                        </tr>
+                        
+                        </table>
+
+                        <button class="ui primary button">
+                            Apply
+                        </button>
+
+                  
+                     
+                    
 
               </div>
-              <div class="column form_column">
 
-                <span>text</span>
+            </div>
+            <div class="ui tab" data-tab="tab-name2">
+              <!-- Tab Content !-->
+              <textarea class="source-code">
+                  {
+                    "@context": {
+                      "osm": "https://w3id.org/openstreetmap/terms#",
+                      "opp": "https://w3id.org/openplannerteam/profile#",
+                      "prov": "http://www.w3.org/ns/prov#",
+                      "hasMaxSpeed": {
+                        "@id": "opp:hasMaxSpeed"
+                      },
+                      "usePublicTransport": {
+                        "@id": "opp:usePublicTransport"
+                      },
+                      "hasAccessRules": {
+                        "@id": "opp:hasAccessRules"
+                      },
+                      "hasOnewayRules": {
+                        "@id": "opp:hasOnewayRules"
+                      },
+                      "hasSpeedRules": {
+                        "@id": "opp:hasSpeedRules"
+                      },
+                      "hasPriorityRules": {
+                        "@id": "opp:hasPriorityRules"
+                      },
+                      "hasObstacleRules": {
+                        "@id": "opp:hasObstacleRules"
+                      },
+                      "hasAccess": {
+                        "@id": "opp:hasAccess"
+                      },
+                      "isOneway": {
+                        "@id": "opp:isOneway"
+                      },
+                      "isReversed": {
+                        "@id": "opp:isReversed"
+                      }
+                  }
+                }
+              </textarea>
 
-              </div>
+            </div>
+            <div class="ui tab" data-tab="export-tab" id="UI-tab">
+                <button class="ui primary button">
+                    Import
+                  </button>
+                  <button class="ui secondary button">
+                      Save
+                    </button>
+                  <button class="ui secondary button">
+                    Export
+                  </button>
+
             </div>
           </div>
 
